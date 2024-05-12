@@ -1,0 +1,19 @@
+[package]
+name = "fastpipe"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.4.11", features = ["derive"] }
+eyre = "0.6.11"
+libspa = "0.7.2"
+libspa-sys = "0.7.2"
+mimalloc = "0.1.39"
+pipewire = "0.7.2"
+
+[profile.release]
+codegen-units = 1
+lto = true
+panic = "abort"
